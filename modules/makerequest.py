@@ -1,4 +1,4 @@
-import metadata
+from modules import metadata
 import requests
 
 '''
