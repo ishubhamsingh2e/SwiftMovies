@@ -5,17 +5,16 @@ const path = require('path')
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 500,
-    height: 700,
+    width: 630,
+    height: 750,
     resizable: false,
-    icon: "static/logo2.ico",
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('template/index.html')
+  mainWindow.loadFile('jsloadhtml/loading.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

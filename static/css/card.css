@@ -1,0 +1,60 @@
+.cards {
+  display: flex;
+  background-color: #4d4d4d;
+  color: aliceblue;
+  margin: 10px 40px;
+  border-radius: 5px;
+  box-shadow: 0 7px 11px 0 rgb(0 0 0 / 20%);
+}
+.cards:hover{
+  box-shadow: none;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+}
+
+.para {
+  height: 85px;
+  overflow: overlay;
+  padding-right: 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: #454444;
+  padding-left: 5px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.para::-webkit-scrollbar {
+  display: none;
+}
+
+.mainimg {
+  height: 150px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.info {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cards h2 {
+  font-size: 23px;
+  margin-bottom: 5px;
+  margin-top: 7px;
+}
+
+.cards p {
+  text-align: left;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-size: 17px;
+}
+
+.cards b{
+  font-size: 17px;
+}

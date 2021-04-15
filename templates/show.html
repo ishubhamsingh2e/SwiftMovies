@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/show.css') }}">
+    <title>Q'ed</title>
+    <style>
+        .background{
+            background-image: linear-gradient(0deg, rgba(0,0,0,0.7714082947632178) 0%, rgba(1,1,27,0.3876547933626575) 42%, rgba(128,131,132,0) 100%) , url("https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{data['backdrop_path']}}");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <form class="inline" action="/trending">
+            <button><img src="https://s2.svgbox.net/materialui.svg?ic=home"></button>
+        </form>
+        
+        <form class="inline" action="/addstack?id={{data['id']}}" method="POST">
+            <button style="float: right;"><img src="https://s2.svgbox.net/materialui.svg?ic=add_task"></button>
+        </form>
+        
+        
+    </div>
+    <div class="poster">
+        <div><img class="posterimg"
+                src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{data['poster_path']}}">
+        </div>
+        <div style="width: 400px;"><h3>popularity : {{data['popularity']}}</h3></div>
+    </div>
+
+    <div class="title">
+        <h2>{{data['original_title']}}</h2>
+        <div class="genres">
+
+            {% for i in data['genres'] %}
+            <div>
+                <h4><strong>{{i['name']}}</strong></h4>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>Description</h3>
+        <p>{{data['overview']}}</p>
+        <h3>More Info</h3>
+        <table style="width:100%">
+            <tr>
+              <td>status</td>
+              <td>{{data['status']}}</td>
+            </tr>
+            <tr>
+                <td>release_date</td>
+                <td>{{data['release_date']}}</td>
+            </tr>
+            <tr>
+                <td>runtime</td>
+                <td>{{data['runtime']}} min</td>
+              </tr>
+            <tr>
+            <tr>
+                <td>adult</td>
+                <td>{{data['adult']}}</td>
+              </tr>
+            <tr>
+              <td>vote_average</td>
+              <td>{{data['vote_average']}}</td>
+            </tr>
+          </table>
+    </div>
+</body>
+
+</html>

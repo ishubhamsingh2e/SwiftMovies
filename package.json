@@ -1,5 +1,5 @@
 {
-  "name": "swiftmovies",
+  "name": "Q'ed",
   "version": "1.0.0",
   "description": "desktop application that simplify and redesign finding your favourite movies and tv shows over the internet.",
   "main": "main.js",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Sb2001nov/SwiftMovies#README",
   "dependencies": {
-    "electron": "^12.0.0"
+    "electron": "^12.0.2",
+    "is-online": "^9.0.0"
   }
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/card.css') }}">
+    <title>Q'ed</title>
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column;">
+        <div class="stack"><a href="/stack">Watchlist</a></div>
+    <div style="display: flex; flex-direction: column;">
+        <main>
+            <div class="topbar" id="topbar">
+
+                <div class="page" id="page">
+                    <h2 style="margin-top: 50px;">Results</h2>
+                </div>
+                <div class="search" id="search" style="padding: 10px 155px; margin-bottom: 30px;">
+                    <form action="/redirect" method="POST">
+                        <label for="search">Search for stuff</label>
+                        <input name="query" id="search" type="search" placeholder="Search..." autofocus required />
+                        <button type="submit">Go</button>
+                    </form>
+                </div>
+
+            </div>
+        </main>
+
+        {% for i in data['results'] %}
+
+            <div class="cards">
+                <div><img class="mainimg" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/{{i['poster_path']}}">
+                </div>
+                <div class="info">
+                    <a href="/result?id={{i['id']}}"><h2>{{i['title']}} {{i['name']}}</h2></a>
+                    <div class="para"><p>{{i['overview']}}</p></div>
+                    <b> og lang : {{i['original_language']}} | vote Avg. : {{i['vote_average']}}</b>
+                </div>
+
+            </div>
+        {% endfor %}
+
+
+    </div>
+</body>
+
+</html>

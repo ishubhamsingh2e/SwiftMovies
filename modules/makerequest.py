@@ -2,7 +2,7 @@ from modules import metadata
 import requests
 
 '''
-    if server have no data from request it returns zero
+    if server have no data from request, it returns zero
 '''
 
 
@@ -19,6 +19,13 @@ class search:
 
     def searchId(self, id):
         r = requests.get(f"{self.baseUrl}movie/{id}?api_key={metadata.apiKey}&language=en-US")
+        if r.status_code == 200:
+            return r.json()
+        else:
+            return 0
+
+    def trending(self):
+        r = requests.get(f"https://api.themoviedb.org/3/trending/all/day?api_key={metadata.apiKey}")
         if r.status_code == 200:
             return r.json()
         else:
