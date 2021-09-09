@@ -9,8 +9,8 @@
 ![](https://user-images.githubusercontent.com/43581470/132725673-e04c07b8-a1de-448a-ad10-f1689bd37c2f.png)
 
 ## Run on you system
-requirement
-  node.js -> electron
+requirement:
+  node.js -> electron, 
   pytohn -> flask, requests
 
 - run these command "python app.py", "npm start"
